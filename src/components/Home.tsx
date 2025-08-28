@@ -5,7 +5,6 @@ import styles from '@/styles/Home.module.css';
 import Socials from './Socials';
 import { roles } from '@/data';
 
-
 const TypingEffect: React.FC = () => {
     const texts: string[] = roles;
 
@@ -13,7 +12,7 @@ const TypingEffect: React.FC = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+            setCurrentTextIndex(prevIndex => (prevIndex + 1) % texts.length);
         }, 6000);
 
         return () => clearInterval(interval);
@@ -42,7 +41,7 @@ const Home: React.FC = () => {
                             </div>
                         </div>
                         <h1 className={styles.sec}>
-                            I'M <span className={styles.secSpan}>SRINIVAS BATTHULA</span>
+                            I&apos;M <span className={styles.secSpan}>SRINIVAS BATTHULA</span>
                         </h1>
                         <div className={styles.third} style={{ fontWeight: 'bold' }}>
                             <TypingEffect />
@@ -57,29 +56,36 @@ const Home: React.FC = () => {
             {/* About Section */}
             <div
                 style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignContent: "center",
-                    justifyItems: "center",
-                    alignItems: "center",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignContent: 'center',
+                    justifyItems: 'center',
+                    alignItems: 'center',
                 }}
             >
                 <div className={styles.div1}>
                     <div style={{ backgroundColor: 'transparent' }}>
                         <div className={styles.div2}>
-                            LET ME{' '}
-                            <span style={{ color: 'rgb(231, 110, 231)' }}>INTRODUCE</span>{' '}
+                            LET ME <span style={{ color: 'rgb(231, 110, 231)' }}>INTRODUCE</span>{' '}
                             MYSELF
                         </div>
                         <div className={styles.div3}>
                             <p>
-                                Hello! I'm <span style={{ color: 'rgb(231, 100, 231)', fontWeight: 'bold' }}>Srinivas Batthula</span>,
-                                a Motivated and detail-oriented Full Stack Developer with hands-on experience in scalable web apps.
-                                <br /><br />
-                                I specialize in the MERN stack and Next.js, building PWA features and optimizing backends.
-                                <br /><br />
-                                I'm committed to continuous learning and contributing to tech-driven teams.
+                                Hello! I&apos;m{' '}
+                                <span style={{ color: 'rgb(231, 100, 231)', fontWeight: 'bold' }}>
+                                    Srinivas Batthula
+                                </span>
+                                , a Motivated and detail-oriented Full Stack Developer with hands-on
+                                experience in scalable web apps.
+                                <br />
+                                <br />
+                                I specialize in the MERN stack and Next.js, building PWA features
+                                and optimizing backends.
+                                <br />
+                                <br />
+                                I&apos;m committed to continuous learning and contributing to
+                                tech-driven teams.
                             </p>
                         </div>
                     </div>

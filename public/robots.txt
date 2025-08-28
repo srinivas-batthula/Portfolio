@@ -2,5 +2,8 @@
 User-agent: *
 Allow: /
 
+# Host
+Host: https://srinivas-batthula.vercel.app
+
 # Sitemaps
 Sitemap: https://srinivas-batthula.vercel.app/sitemap.xml

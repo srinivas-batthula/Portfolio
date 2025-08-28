@@ -1,6 +1,5 @@
 // app/api/uptimer/route.ts             { Run by VERCEL-CRON at 6:30AM everyday }...
-import { NextRequest, NextResponse } from "next/server";
-
+import { NextRequest, NextResponse } from 'next/server';
 
 // Define the shape of the response (helps with type safety)
 interface UptimeResponse {
@@ -11,20 +10,20 @@ interface UptimeResponse {
 }
 
 // Helper: delay execution for given ms (used between pings)
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 // URL-format := `https://srinivas-batthula.vercel.app/api/uptimer?url=https://coflow-backend-bcgk.onrender.com&times=3`
 export async function GET(req: NextRequest) {
     // Parse query params from request URL
     const { searchParams } = new URL(req.url);
-    let url = searchParams.get("url");
-    let times = searchParams.get("times");
+    let url = searchParams.get('url');
+    let times = searchParams.get('times');
 
     // Validate inputs
     if (!url || !times || isNaN(Number(times)) || parseInt(times) < 1) {
         // Fallback defaults if input invalid
-        url = "https://coflow-backend-bcgk.onrender.com/";
-        times = "2";
+        url = 'https://coflow-backend-bcgk.onrender.com/';
+        times = '2';
     }
     console.log(`/api/uptimer executed! URL: ${url}`);
 
@@ -41,7 +40,7 @@ export async function GET(req: NextRequest) {
         const requestCount = parseInt(times!);
         for (let i = 0; i < requestCount; i++) {
             try {
-                const ping = await fetch(url!); // ping target URL
+                await fetch(url!); // ping target URL
                 // console.log(`[${i + 1}] ${url} → ${ping.status}`);
             } catch (err: any) {
                 console.error(`[${i + 1}] Error pinging ${url}:`, err.message);
@@ -57,7 +56,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(response, {
         status: 200,
         headers: {
-            "Cache-Control": "no-store, max-age=0", // Disable caching
+            'Cache-Control': 'no-store, max-age=0', // Disable caching
         },
     });
 }

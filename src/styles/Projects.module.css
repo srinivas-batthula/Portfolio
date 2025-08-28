@@ -20,7 +20,7 @@
     margin-bottom: 3rem;
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
     .head {
         font-size: 1.8rem;
     }
@@ -38,7 +38,7 @@
 }
 
 @media screen and (max-width: 650px) {
-    .main2{
+    .main2 {
         width: 100%;
     }
 }
@@ -67,10 +67,9 @@
     position: relative;
 }
 
-.card:active{
+.card:active {
     background: rgba(0, 102, 255, 0.186);
 }
-
 
 .img {
     /*     width: 22rem;
@@ -120,12 +119,12 @@
 }
 
 @media screen and (max-width: 508px) {
-    .card{
+    .card {
         width: 100%;
         /* border-radius: 0; */
         height: fit-content;
     }
-    .links{
+    .links {
         margin-bottom: 1rem;
         margin-top: 0rem;
     }
@@ -156,10 +155,6 @@
     box-shadow: 0 0.18rem 1.4rem rgb(141, 76, 141);
     transition: all 0s;
 }
-
-
-
-
 
 .card2 {
     display: flex;

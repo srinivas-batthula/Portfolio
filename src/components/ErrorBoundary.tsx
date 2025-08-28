@@ -1,7 +1,6 @@
-'use client'
+'use client';
 import React, { ReactNode } from 'react';
 import Link from 'next/link';
-
 
 interface ErrorBoundaryProps {
     children: ReactNode;
@@ -17,7 +16,7 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
         this.state = { hasError: false };
     }
 
-    static getDerivedStateFromError(_: Error): ErrorBoundaryState {
+    static getDerivedStateFromError(): ErrorBoundaryState {
         return { hasError: true };
     }
 

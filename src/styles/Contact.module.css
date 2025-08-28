@@ -61,13 +61,13 @@
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width: 700px) {
     .form {
         width: 80%;
     }
 }
 
-@media screen and (max-width:630px) {
+@media screen and (max-width: 630px) {
     .form {
         width: 82%;
         margin-top: 6rem;
@@ -80,7 +80,7 @@
     } */
 }
 
-@media screen and (max-width:520px) {
+@media screen and (max-width: 520px) {
     .form {
         width: 90%;
     }
@@ -93,7 +93,7 @@
     padding: 0.1rem;
 }
 
-@media screen and (max-width:450px) {
+@media screen and (max-width: 450px) {
     .form {
         width: 97%;
         margin-top: 3.5rem;
@@ -165,7 +165,7 @@
 }
 
 .img {
-    background-image: url('./../public/utils/contact.svg');
+    background-image: url('../../public/utils/contact.svg');
     background-position: center;
     width: 28rem;
     height: 28rem;

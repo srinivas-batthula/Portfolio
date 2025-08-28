@@ -1,12 +1,13 @@
 import styles from '@/styles/Home.module.css';
 
-
 const Footer: React.FC = () => {
     return (
         <div className={styles.footer}>
             <div className={styles.footerChild1}>
                 Designed and Developed by{' '}
-                <span style={{ color: 'rgb(251, 53, 251)', fontWeight: 'bold', fontStyle: 'italic' }}>
+                <span
+                    style={{ color: 'rgb(251, 53, 251)', fontWeight: 'bold', fontStyle: 'italic' }}
+                >
                     Srinivas Batthula
                 </span>
             </div>
@@ -21,9 +22,7 @@ const Footer: React.FC = () => {
                 />
             </a>
 
-            <div className={styles.footerChild2}>
-                Copyright © {new Date().getFullYear()} BSP
-            </div>
+            <div className={styles.footerChild2}>Copyright © {new Date().getFullYear()} BSP</div>
 
             <div className={styles.footerChild3}>
                 <a

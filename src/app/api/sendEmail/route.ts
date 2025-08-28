@@ -1,16 +1,16 @@
 // app/api/sendEmail/route.ts
-import { NextRequest, NextResponse } from "next/server";
-import nodemailer, { SendMailOptions } from "nodemailer";
+import { NextRequest, NextResponse } from 'next/server';
+import nodemailer, { SendMailOptions } from 'nodemailer';
 
 // --- Types --- //
 interface ContactFormPayload {
-    to: string;   // Recipient email (user who filled contact form)
+    to: string; // Recipient email (user who filled contact form)
     name: string; // User’s name
-    txt: string;  // Message content
+    txt: string; // Message content
 }
 
 interface ApiResponse {
-    status: "success" | "fail";
+    status: 'success' | 'fail';
     message?: string;
     error?: string;
 }
@@ -61,7 +61,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
         // Validate input
         if (!to || !name || !txt) {
             return NextResponse.json(
-                { status: "fail", error: "to, name, and txt fields are required." },
+                { status: 'fail', error: 'to, name, and txt fields are required.' },
                 { status: 400 }
             );
         }
@@ -73,14 +73,14 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
 
         if (!EMAIL_USER || !EMAIL_PASS || !EMAIL_USER2) {
             return NextResponse.json(
-                { status: "fail", error: "Server email credentials are missing." },
+                { status: 'fail', error: 'Server email credentials are missing.' },
                 { status: 500 }
             );
         }
 
         // Create transporter (using Gmail in this case)
         const transporter = nodemailer.createTransport({
-            service: "gmail",
+            service: 'gmail',
             auth: { user: EMAIL_USER, pass: EMAIL_PASS },
         });
 
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
         const firstEmail: SendMailOptions = {
             from: EMAIL_USER,
             to,
-            subject: "An E-mail from ~Srinivas Batthula",
+            subject: 'An E-mail from ~Srinivas Batthula',
             html: buildFirstEmailHtml(name),
         };
 
@@ -96,7 +96,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
         const secondEmail: SendMailOptions = {
             from: EMAIL_USER,
             to: EMAIL_USER2,
-            subject: "From Personal Portfolio",
+            subject: 'From Personal Portfolio',
             html: buildSecondEmailHtml(name, txt),
         };
 
@@ -105,13 +105,13 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
         await transporter.sendMail(secondEmail);
 
         return NextResponse.json(
-            { status: "success", message: "Emails sent successfully!" },
+            { status: 'success', message: 'Emails sent successfully!' },
             { status: 200 }
         );
     } catch (err: any) {
-        console.error("Email API Error:", err);
+        console.error('Email API Error:', err);
         return NextResponse.json(
-            { status: "fail", error: err.message || "Failed to send email." },
+            { status: 'fail', error: err.message || 'Failed to send email.' },
             { status: 500 }
         );
     }

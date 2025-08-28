@@ -1,15 +1,14 @@
-"use client";
+'use client';
 
-import React, { useRef } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation } from "swiper/modules";
-import Image from "next/image";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
-import { certifications } from "@/data";
-import { Certification } from "@/types";
-
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Navigation } from 'swiper/modules';
+import Image from 'next/image';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/autoplay';
+import { certifications } from '@/data';
+import { Certification } from '@/types';
 
 const certificates: Certification[] = certifications as Certification[];
 
@@ -20,11 +19,11 @@ const ImageCarousel: React.FC = () => {
         <div className="w-full max-w-2xl mx-auto overflow-hidden py-1 relative active:opacity-60">
             <Swiper
                 ref={swiperRef}
-                slidesPerView={1}           // Only 1 image at a time
+                slidesPerView={1} // Only 1 image at a time
                 autoplay={{ delay: 2300, disableOnInteraction: false }}
-                loop={true}                 // Infinite scrolling
+                loop={true} // Infinite scrolling
                 modules={[Autoplay, Navigation]}
-                onSwiper={(swiper) => (swiperRef.current = swiper)}
+                onSwiper={swiper => (swiperRef.current = swiper)}
                 className="mySwiper"
             >
                 {certificates.map((item, idx) => (
@@ -35,9 +34,9 @@ const ImageCarousel: React.FC = () => {
                                 alt={`Slide ${idx}`}
                                 width={800}
                                 height={500}
-                                priority={idx === 0}    // only first image gets priority (fixes LCP warning)
-                                className='w-full h-60 object-cover rounded-lg shadow-md'
-                                style={{ objectFit: "cover" }}
+                                priority={idx === 0} // only first image gets priority (fixes LCP warning)
+                                className="w-full h-60 object-cover rounded-lg shadow-md"
+                                style={{ objectFit: 'cover' }}
                             />
                         </a>
                     </SwiperSlide>
@@ -59,6 +58,6 @@ const ImageCarousel: React.FC = () => {
             </button>
         </div>
     );
-}
+};
 
 export default ImageCarousel;

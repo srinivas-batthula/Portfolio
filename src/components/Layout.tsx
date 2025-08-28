@@ -9,16 +9,15 @@ import ParticlesBackground from './Background';
 import styles from '@/styles/Home.module.css';
 import FunToast from './ToastFun';
 
-import { useUserDetailsStore } from '@/stores'
+import { useUserDetailsStore } from '@/stores';
 import { trySendOfflineShares } from '@/utils';
 
-
 interface LayoutProps {
-    children: ReactNode;   // children can be any ReactNode (JSX, string, etc.)
+    children: ReactNode; // children can be any ReactNode (JSX, string, etc.)
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const fetchDetails = useUserDetailsStore((s) => s.fetchDetails);
+    const fetchDetails = useUserDetailsStore(s => s.fetchDetails);
 
     useEffect(() => {
         // Redirect GitHub Pages → Vercel deployment
@@ -29,7 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
             function extractLastSegment(path: string): string {
                 const parts = path.split('/').filter(Boolean);
-                return (parts.length > 1 && parts[0] === 'portfolio')
+                return parts.length > 1 && parts[0] === 'portfolio'
                     ? '/' + parts[parts.length - 1]
                     : '/';
             }
@@ -47,10 +46,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         if ('serviceWorker' in navigator && window.location.hostname !== 'localhost') {
             navigator.serviceWorker
                 .register(`${process.env.NEXT_PUBLIC_HOME}/service-worker.js`, { scope: '/' })
-                .then((registration) => {
+                .then(registration => {
                     console.log('Service Worker registered with scope: ', registration.scope);
                 })
-                .catch((error) => {
+                .catch(error => {
                     console.error('Service Worker Registration failed: ', error);
                 });
         }

@@ -9,9 +9,9 @@ const nextConfig = {
     images: {
         remotePatterns: [
             { protocol: 'https', hostname: 'srinivas-batthula.github.io', pathname: '/**' },
-            { protocol: 'https', hostname: 'srinivas-batthula.vercel.app', pathname: '/**' }
-        ]
-    }
+            { protocol: 'https', hostname: 'srinivas-batthula.vercel.app', pathname: '/**' },
+        ],
+    },
 };
 
 module.exports = nextConfig;

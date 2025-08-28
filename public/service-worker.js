@@ -74,7 +74,7 @@ self.addEventListener("sync", (event) => {
 })
 
 async function syncShareQueue() {
-    console.log('Fired syncShareQueue in Service-Worker!');
+    console.log('Fired syncShareQueue from Service-Worker!');
 
     const db = await openShareDB();
     const tx = db.transaction("contactForm", "readonly");
