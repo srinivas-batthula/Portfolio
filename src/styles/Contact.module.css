@@ -1,0 +1,205 @@
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 3.5rem;
+    overflow: hidden;
+}
+
+.head {
+    color: rgba(255, 255, 255, 0.751);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 1.4rem;
+    margin-bottom: 2rem;
+    width: 40%;
+}
+
+@media screen and (max-width: 1005px) {
+    .head {
+        width: 90%;
+    }
+}
+
+.head2 {
+    color: rgba(218, 94, 218, 0.855);
+    animation: colorFadeHead 3s ease-in-out infinite alternate;
+}
+
+@keyframes colorFadeHead {
+    0% {
+        text-shadow: 0 0.3rem 1rem rgba(201, 141, 201, 0.715);
+    }
+
+    70% {
+        text-shadow: 0 0.3rem 1rem rgba(255, 2, 255, 0.936);
+    }
+}
+
+.form {
+    width: 32rem;
+    margin-top: 5rem;
+    padding: 1rem;
+    border-radius: 5%;
+    box-shadow: 0 0 0.7rem rgba(238, 130, 238, 0.879);
+    outline: solid 0.02rem violet;
+    transition-duration: 0.35s;
+    transition-property: all;
+    backdrop-filter: blur(0.1rem);
+}
+
+.form:hover {
+    box-shadow: 0 0 2rem rgba(234, 84, 234, 0.856);
+}
+
+@media screen and (max-width: 830px) {
+    .form {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .form {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .form {
+        width: 82%;
+        margin-top: 6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* .head{
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    } */
+}
+
+@media screen and (max-width:520px) {
+    .form {
+        width: 90%;
+    }
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    padding: 0.1rem;
+}
+
+@media screen and (max-width:450px) {
+    .form {
+        width: 97%;
+        margin-top: 3.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .row {
+        margin-left: 0.3rem;
+        margin-right: 0.3rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+.btn {
+    font-size: 1.1rem;
+    border-radius: 25%;
+    font-weight: 600;
+    width: fit-content;
+    background-color: rgba(225, 110, 225, 0.856);
+    box-shadow: 0 0 0.7rem rgba(237, 95, 237, 0.901);
+    transition-duration: 0.2s;
+    transition-property: all;
+    margin-top: 1.2rem;
+}
+
+.btn:hover {
+    box-shadow: 0 0 1rem rgb(54, 101, 219);
+    transform: scale(1.02);
+}
+
+.btn i {
+    transition: transform 0.6s ease-in-out;
+}
+
+.btn:hover i {
+    transform: rotate3d(0, 0, 1, 360deg);
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.inp {
+    transition-duration: 0.15s;
+    transition-property: all;
+}
+
+.inp:focus {
+    outline: rgb(237, 95, 237) double 0.01rem;
+    box-shadow: 0 0 0.65rem rgba(237, 95, 237, 0.849);
+}
+
+.validationIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: gray;
+}
+
+.validationIcon.valid {
+    color: green;
+}
+
+.validationIcon.invalid {
+    color: red;
+}
+
+.img {
+    background-image: url('./../public/utils/contact.svg');
+    background-position: center;
+    width: 28rem;
+    height: 28rem;
+    margin-bottom: 0.8rem;
+}
+
+/* @media screen and (max-width:800px) {
+    .head{
+        font-size: 1.8rem;
+    }
+} */
+
+.main2 {
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.txt {
+    color: rgba(255, 255, 255, 0.822);
+    font-size: 2rem;
+    font-weight: 800;
+    animation: colorFade 3s ease-in-out infinite alternate;
+}
+
+@keyframes colorFade {
+    0% {
+        color: rgba(255, 255, 255, 0.822);
+    }
+
+    100% {
+        color: rgb(231, 110, 231);
+    }
+}

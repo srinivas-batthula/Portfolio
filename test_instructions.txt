@@ -1,0 +1,9 @@
+Follow these instructions for clean setup & also before committing/pushing to GitHub -->>
+
+1. npm run format
+2. npm run lint
+3. npm run type-check
+4. npm run dev
+
+5. npm run build
+6. npm start
