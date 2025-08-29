@@ -8,10 +8,11 @@
         "build": "next build",
         "postbuild": "next-sitemap",
         "start": "next start",
-        "lint": "next lint",
+        "lint:check": "next lint",
         "lint:fix": "npx eslint . --fix",
         "type-check": "tsc --noEmit",
-        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "format:fix": "prettier --write .",
         "deploy": "gh-pages -d out"
     },
     "dependencies": {
