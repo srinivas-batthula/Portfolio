@@ -23,5 +23,5 @@
         "@typescript-eslint/no-explicit-any": "off",
         "@next/next/no-img-element": "off"
     },
-    "ignorePatterns": [".next/", "out/", "dist/", "node_modules/", "public/"]
+    "ignorePatterns": [".next/", "out/", "dist/", "node_modules/", "public/", "next-env.d.ts"]
 }
