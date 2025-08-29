@@ -40,7 +40,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
                 const redirectTo = `https://${correctHost}${currentPath}`;
                 console.log(redirectTo);
-                // window.location.replace(redirectTo);
+                window.location.replace(redirectTo);
             }
         }
         // Register service worker in production
