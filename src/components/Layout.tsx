@@ -39,6 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     window.location.hash;
 
                 const redirectTo = `https://${correctHost}${currentPath}`;
+                console.log(redirectTo);
                 // window.location.replace(redirectTo);
             }
         }
