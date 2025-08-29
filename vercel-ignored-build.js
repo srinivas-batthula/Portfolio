@@ -3,9 +3,9 @@
 // This Script is run by Vercel when a new req. is got to trigger a deploy by GitHub's Auto-Push Or by GitHub-Action pipeline...
 
 if (process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN === 'github-actions[bot]') {
-    // If the 'deploy' is triggered by 'GitHub Actions' via 'DEPLOY_HOOK',
+    // If the 'deploy' is triggered by 'GitHub Actions' via 'DEPLOY_HOOK',,
     process.exit(1); // then, build & deploy...
 } else {
-    // Or If the 'deploy' is triggered by GitHub's 'Auto-Push' to branch 'main',
+    // Or If the 'deploy' is triggered by GitHub's 'Auto-Push' to branch 'main',,
     process.exit(0); // skip deploy (Don't 'deploy' just go forward)...
 }
