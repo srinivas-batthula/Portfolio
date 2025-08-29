@@ -1,24 +1,25 @@
 // vercel-ignored-build.js
-// This 'Script' tells 'Vercel' when to 'deploy' & when not to deploy to production  for every 'changes' made to main branch in 'GitHub-repo'...
-// This Script is run by Vercel when a new req. is got to trigger a deploy by GitHub's Auto-Push Or by GitHub-Action pipeline...
+// Controls when Vercel deploys, so only GitHub Actions deployments go through
+// Add this script in Vercel's Project → Settings → "Ignored Build Step"
 
-if (
-    process.env.VERCEL_GIT_PROVIDER &&
-    process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN !== 'github-actions[bot]'
-) {
-    // Case 1: Deployment triggered from GitHub auto-push → block,
-    console.log('Skipping Git auto-push deploy');
-    process.exit(0); // skip
-} else if (!process.env.VERCEL_GIT_PROVIDER) {
-    // Case 2: Deployment triggered via deploy hook (no GIT vars) → allow
-    console.log('Allowing deploy from GitHub Actions via deploy hook');
-    process.exit(1); // deploy
-} else if (process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN === 'github-actions[bot]') {
-    // Case 3: Deployment triggered by GitHub Actions (bot commit) → allow
-    console.log('Allowing deploy from GitHub Actions bot');
-    process.exit(1); // deploy
-} else {
-    // Default → block
-    console.log('Skipping unknown deploy req.');
-    process.exit(0); // skip
+if (process.env.CI) {
+    // Case 1: GitHub Actions pipeline
+    console.log(' Allowing deploy: Triggered via GitHub Actions (CI/CD)');
+    process.exit(1); // force deploy
 }
+
+if (!process.env.VERCEL_GIT_PROVIDER) {
+    // Case 2: Manual deploy hook (no git vars → API trigger)
+    console.log(' Allowing deploy: Triggered via Deploy Hook/API');
+    process.exit(1);
+}
+
+if (process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN === 'github-actions[bot]') {
+    // Case 3: Bot commit from Actions
+    console.log(' Allowing deploy: GitHub Actions bot commit');
+    process.exit(1);
+}
+
+// Default: skip auto-push or unknown sources
+console.log(' Skipping deploy: Ignored auto-push or unknown source');
+process.exit(0);
