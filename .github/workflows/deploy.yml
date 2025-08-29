@@ -1,0 +1,23 @@
+name: Portfolio Deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        name: Deploy to Vercel
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Wait for CI to succeed
+              uses: lewagon/wait-on-check-action@v1.3.1
+              with:
+                  ref: ${{ github.ref }}
+                  check-name: 'Build Next.js App' # Waits for the Job in `ci.yml` to succeed...
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+                  wait-interval: 10
+
+            - name: Trigger Vercel Deployment
+              run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
