@@ -6,7 +6,7 @@ if (
     process.env.VERCEL_GIT_PROVIDER &&
     process.env.VERCEL_GIT_COMMIT_AUTHOR_LOGIN !== 'github-actions[bot]'
 ) {
-    // Case 1: Deployment triggered from GitHub auto-push → block
+    // Case 1: Deployment triggered from GitHub auto-push → block,
     console.log('Skipping Git auto-push deploy');
     process.exit(0); // skip
 } else if (!process.env.VERCEL_GIT_PROVIDER) {
