@@ -5,14 +5,31 @@ on:
     push:
         branches:
             - '**'
+        paths-ignore:
+            - 'README.md'
+            - 'test_instructions.txt'
+            - 'metadata.json'
+            - '.env.example'
+            - 'docs/**'
     pull_request:
         branches:
             - main
+        paths-ignore:
+            - 'README.md'
+            - 'test_instructions.txt'
+            - 'metadata.json'
+            - '.env.example'
+            - 'docs/**'
+
+concurrency: # Cancels old runs when new commits are pushed
+    group: ci-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-    lint-and-format:
+    lint-and-format: # Job-1
         name: Lint & Format & Type Check
         runs-on: ubuntu-latest
+        timeout-minutes: 4
 
         steps:
             - name: Checkout repository
@@ -24,7 +41,7 @@ jobs:
                   node-version: 18
                   cache: 'npm'
 
-            - name: Install dependencies
+            - name: Install dependencies (with caching)
               run: npm ci
 
             - name: Prettier Check
@@ -36,10 +53,11 @@ jobs:
             - name: TypeScript Check
               run: npm run type-check
 
-    build:
+    build: # Job-2
         name: Build Next.js App
         runs-on: ubuntu-latest
         needs: lint-and-format
+        timeout-minutes: 6
 
         steps:
             - name: Checkout repository
@@ -51,23 +69,29 @@ jobs:
                   node-version: 18
                   cache: 'npm'
 
+            - name: Cache Next.js build cache
+              uses: actions/cache@v4
+              with:
+                  path: .next/cache
+                  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+                  restore-keys: |
+                      ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
             - name: Install dependencies
               run: npm ci
 
             - name: Build project
               run: npm run build
 
-    deploy:
-        name: Deploy to Vercel via CLI
+    deploy: # Job-3
+        name: Deploy to Vercel via Vercel-CLI
         runs-on: ubuntu-latest
         needs: build
         # Only deploy on pushes & PR merges to 'main' &&  Ignore auto-push from bots...
         if: github.ref == 'refs/heads/main' && !contains(github.actor, 'vercel') && !contains(github.actor, 'dependabot[bot]') && !contains(github.actor, 'github-actions[bot]')
+        timeout-minutes: 3
 
         steps:
-            # - name: Trigger Vercel Deployment
-            #   run: curl -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
-
             - name: Checkout code
               uses: actions/checkout@v3
 
@@ -76,10 +100,7 @@ jobs:
               with:
                   node-version: 18
 
-            - name: Install Vercel CLI
-              run: npm install -g vercel
-
-            - name: Deploy to Vercel
+            - name: Deploy to Vercel via Vercel-CLI
               run: npx vercel --prod --token=$VERCEL_TOKEN --scope=$VERCEL_ORG_ID --confirm --yes
               env:
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}

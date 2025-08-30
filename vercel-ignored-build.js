@@ -1,4 +1,4 @@
-// vercel-ignored-build.js
+// vercel-ignored-build.js          { Not In Use Now, as we are using Vercel_CLI for deployment... }
 // Controls when Vercel deploys, so only GitHub Actions deployments go through
 // Add this script in Vercel's Project → Settings → "Ignored Build Step"
 
