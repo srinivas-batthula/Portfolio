@@ -1,0 +1,54 @@
+# .github/workflows/lint-and-format.yml    (Starter file/Job in CI/CD flow)...
+name: Lint & Type Check
+
+on:
+    push:
+        branches:
+            - '**'
+        paths-ignore:
+            - 'README.md'
+            - 'test_instructions.txt'
+            - 'metadata.json'
+            - '.env.example'
+            - 'docs/**'
+    pull_request:
+        branches:
+            - main
+        paths-ignore:
+            - 'README.md'
+            - 'test_instructions.txt'
+            - 'metadata.json'
+            - '.env.example'
+            - 'docs/**'
+
+concurrency: # Cancels old runs when new commits are pushed
+    group: lint-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    lint-and-format:
+        name: Lint & Format & Type Check
+        runs-on: ubuntu-latest
+        timeout-minutes: 4
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 18
+                  cache: 'npm'
+
+            - name: Install dependencies (with caching)
+              run: npm ci
+
+            - name: Prettier Check
+              run: npm run format:check
+
+            - name: ESLint Check
+              run: npm run lint:check
+
+            - name: TypeScript Check
+              run: npm run type-check
