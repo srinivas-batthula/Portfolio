@@ -2,14 +2,7 @@
 name: Deploy to Vercel
 
 on:
-    workflow_run:
-        workflows: ['Build Next.js App']
-        types:
-            - completed
-
-concurrency:
-    group: deploy-${{ github.ref }}
-    cancel-in-progress: true
+    workflow_call: # Makes this Workflow/Job reusable from other workflow
 
 jobs:
     deploy:
@@ -17,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 3
         # Only deploy on pushes & PR merges to 'main' && Only If it's Prev. workflow Succeeded &&  Ignore auto-push from bots....
-        if: github.ref == 'refs/heads/main' && !contains(github.actor, 'vercel') && !contains(github.actor, 'dependabot[bot]') && !contains(github.actor, 'github-actions[bot]') && github.event.workflow_run.conclusion == 'success'
+        if: github.ref == 'refs/heads/main' && !contains(github.actor, 'vercel') && !contains(github.actor, 'dependabot[bot]') && !contains(github.actor, 'github-actions[bot]')
 
         steps:
             - name: Checkout code

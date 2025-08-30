@@ -2,28 +2,7 @@
 name: Lint & Type Check
 
 on:
-    push:
-        branches:
-            - '**'
-        paths-ignore:
-            - 'README.md'
-            - 'test_instructions.txt'
-            - 'metadata.json'
-            - '.env.example'
-            - 'docs/**'
-    pull_request:
-        branches:
-            - main
-        paths-ignore:
-            - 'README.md'
-            - 'test_instructions.txt'
-            - 'metadata.json'
-            - '.env.example'
-            - 'docs/**'
-
-concurrency: # Cancels old runs when new commits are pushed
-    group: lint-${{ github.ref }}
-    cancel-in-progress: true
+    workflow_call: # Makes this Workflow/Job reusable from other workflow
 
 jobs:
     lint-and-format:

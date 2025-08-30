@@ -1,0 +1,38 @@
+# .github/workflows/ci-cd.yml       (Centralized Control of all Jobs/Workflows)...
+name: Portfolio CI/CD
+
+on:
+    push:
+        branches:
+            - '**'
+        paths-ignore:
+            - 'README.md'
+            - 'test_instructions.txt'
+            - 'metadata.json'
+            - '.env.example'
+            - 'docs/**'
+    pull_request:
+        branches:
+            - main
+        paths-ignore:
+            - 'README.md'
+            - 'test_instructions.txt'
+            - 'metadata.json'
+            - '.env.example'
+            - 'docs/**'
+
+concurrency: # Cancels old runs when new commits are pushed
+    group: lint-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    lint-and-format:
+        uses: ./.github/workflows/lint-and-format.yml
+
+    build:
+        needs: lint-and-format
+        uses: ./.github/workflows/build.yml
+
+    deploy:
+        needs: build
+        uses: ./.github/workflows/deploy.yml
