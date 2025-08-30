@@ -87,7 +87,7 @@ jobs:
         name: Deploy to Vercel via Vercel-CLI
         runs-on: ubuntu-latest
         needs: build
-        # Only deploy on pushes & PR merges to 'main' &&  Ignore auto-push from bots...
+        # Only deploy on pushes & PR merges to 'main' &&  Ignore auto-push from bots....
         if: github.ref == 'refs/heads/main' && !contains(github.actor, 'vercel') && !contains(github.actor, 'dependabot[bot]') && !contains(github.actor, 'github-actions[bot]')
         timeout-minutes: 3
 

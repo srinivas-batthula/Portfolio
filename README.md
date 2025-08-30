@@ -22,8 +22,8 @@ Hello all! Welcome to my Portfolio project,, designed to showcase my skills, pro
 
 ## Live Demo
 
-**Official Version (`TS`):** https://srinivas-batthula.vercel.app
-**Older Version (`JS`):** https://srinivas-batthula.github.io/portfolio
+- **Official Version (`TS`):** https://srinivas-batthula.vercel.app
+- **Older Version (`JS`):** https://srinivas-batthula.github.io/portfolio
 
 ## Tech Stack
 
