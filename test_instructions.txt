@@ -1,4 +1,4 @@
-Follow these instructions for clean setup & also before committing/pushing to GitHub -->>
+Follow these Instructions for Successful 'CI/CD'-checks, every-time before committing/pushing your changes to 'GitHub' -->>
 
 1. npm run format:check
 2. npm run format:fix

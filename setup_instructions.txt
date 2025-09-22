@@ -1,0 +1,10 @@
+===>>> Setup instructions for Local-Setup : 
+
+1. First, Comment the code at 'line n.o - 43 ' in `src/components/Layout.tsx`
+2. Create a '.env' file in the root-directory & Add all fields based on `.env.example`  (*Optional*)
+3. Install deps ``` npm install ```
+3. Then Run the project ``` npm run dev ```
+
+-->> For more details goto : 
+    1. Readme.md
+    2. test_instructions.txt
