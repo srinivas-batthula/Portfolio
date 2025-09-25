@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { NAV_ITEMS } from '@/data';
+import { NAV_ITEMS, RESUME_LINK } from '@/data';
 
 const NavbarResponsive: React.FC = () => {
     const [showOffcanvas, setShowOffcanvas] = useState<boolean>(false);
@@ -34,7 +34,7 @@ const NavbarResponsive: React.FC = () => {
                 </div>
 
                 <a
-                    href="https://drive.google.com/uc?export=download&id=1QZhlkZRVyVi1B10Q1RtEsUxgCMZQmST-"
+                    href={RESUME_LINK} // 'RESUME_LINK' from `data/home/navbar.ts`...
                     target="_blank"
                     rel="noopener noreferrer"
                     download

@@ -1,6 +1,9 @@
 // data/home/navbar.ts
 import { NavItem } from '@/types';
 
+export const RESUME_LINK: string =
+    'https://drive.google.com/uc?export=download&id=1QZhlkZRVyVi1B10Q1RtEsUxgCMZQmST-';
+
 export const NAV_ITEMS: NavItem[] = [
     {
         label: 'Home',

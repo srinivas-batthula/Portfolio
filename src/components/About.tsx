@@ -55,7 +55,8 @@ const About: React.FC = () => {
                         </div>
                         <div className={styles.sec4}>
                             My core skills lie in Java and JavaScript, and I’m actively honing my
-                            expertise in the MERN stack through practical projects.
+                            expertise in the MERN & NextJs stack and Backend Development through
+                            practical projects.
                         </div>
                         <div className={styles.sec5}>
                             Beyond programming, I find joy in:
@@ -68,8 +69,8 @@ const About: React.FC = () => {
                         </div>
                         <div className={styles.sec4} style={{ color: 'rgb(213, 114, 143)' }}>
                             <span style={{ fontWeight: 'bold' }}>
-                                &quot; Code with purpose, learn with passion, and grow with
-                                consistency. &quot;
+                                &quot; Commitment builds consistency, Consistency drives success.
+                                &quot;
                             </span>
                             <br />
                             <span style={{ marginLeft: '50%', fontStyle: 'italic' }}>

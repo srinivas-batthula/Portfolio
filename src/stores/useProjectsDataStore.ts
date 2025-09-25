@@ -4,6 +4,8 @@ import { create } from 'zustand';
 import { Project } from '@/types';
 import { saveToIndexedDB, getFromIndexedDB } from '@/utils';
 
+const GITHUB_USER: string = 'srinivas-batthula';
+
 interface ProjectsStore {
     projects: Project[] | null;
     fetchProjects: () => Promise<void>;
@@ -26,21 +28,21 @@ export const useProjectsDataStore = create<ProjectsStore>(set => ({
         try {
             const response = await fetch(
                 // Fetch all repo's of `srinivas-batthula`...
-                'https://api.github.com/users/srinivas-batthula/repos'
+                `https://api.github.com/users/${GITHUB_USER}/repos`
             );
             const repos: any[] = await response.json();
 
             repos.sort(
-                // Sort repositories by creation date (descending / Newest-1st)...
+                // Sort repo's by creation date (descending / Newest-1st)...
                 (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
             );
 
             let i = 0;
             const promises = repos.map(async repo => {
-                // Fetch `metadata.json` files from all the repo's...
+                // Fetch `metadata.json` files from each of the repo's...
                 try {
                     const res = await fetch(
-                        `https://raw.githubusercontent.com/srinivas-batthula/${repo.name}/main/metadata.json`
+                        `https://raw.githubusercontent.com/${GITHUB_USER}/${repo.name}/main/metadata.json`
                     );
                     if (res.status === 200) {
                         console.log(repo.name + '  -Success!');

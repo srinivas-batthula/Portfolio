@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
     const userAgent = req.headers.get('user-agent') || 'Unknown';
     const ip =
         req.headers.get('x-forwarded-for')?.split(',')[0] || req.headers.get('x-real-ip') || '';
-    // ip = "8.8.8.8"; // For testing (US)
+    // ip = "8.8.8.8"; // For testing in local (US)
 
     const geo = await getGeo(ip);
 

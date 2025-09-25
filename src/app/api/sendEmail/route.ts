@@ -4,9 +4,9 @@ import nodemailer, { SendMailOptions } from 'nodemailer';
 
 // --- Types --- //
 interface ContactFormPayload {
-    to: string; // Recipient email (user who filled contact form)
-    name: string; // User’s name
-    txt: string; // Message content
+    to: string; // Recipient Email (user who filled contact-form)
+    name: string; // Recipient User’s name
+    txt: string; // Message content entered in contact-form
 }
 
 interface ApiResponse {
@@ -15,7 +15,7 @@ interface ApiResponse {
     error?: string;
 }
 
-// --- Helper to build HTML email templates --- //
+// --- Helpers to build HTML email templates --- //
 const buildFirstEmailHtml = (name: string) => `<!DOCTYPE html>
 <html>
 <head>
@@ -84,7 +84,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
             auth: { user: EMAIL_USER, pass: EMAIL_PASS },
         });
 
-        // First email: thank user
+        // First email: thanks to contacted `user`
         const firstEmail: SendMailOptions = {
             from: EMAIL_USER,
             to,
@@ -92,7 +92,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
             html: buildFirstEmailHtml(name),
         };
 
-        // Second email: forward message to admin
+        // Second email: forward message to `portfolio-admin`
         const secondEmail: SendMailOptions = {
             from: EMAIL_USER,
             to: EMAIL_USER2,
@@ -105,7 +105,7 @@ export async function POST(req: NextRequest): Promise<NextResponse<ApiResponse>>
         await transporter.sendMail(secondEmail);
 
         return NextResponse.json(
-            { status: 'success', message: 'Emails sent successfully!' },
+            { status: 'success', message: 'Email sent successfully!' },
             { status: 200 }
         );
     } catch (err: any) {

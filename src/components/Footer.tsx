@@ -1,4 +1,5 @@
 import styles from '@/styles/Home.module.css';
+import { SOCIALS } from '@/data';
 
 const Footer: React.FC = () => {
     return (
@@ -26,7 +27,7 @@ const Footer: React.FC = () => {
 
             <div className={styles.footerChild3}>
                 <a
-                    href="https://www.linkedin.com/in/srinivas-batthula/"
+                    href={SOCIALS[0].href}
                     title="LinkedIn"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -35,7 +36,7 @@ const Footer: React.FC = () => {
                     <i className="fa-brands fa-linkedin"></i>
                 </a>
                 <a
-                    href="https://github.com/srinivas-batthula/"
+                    href={SOCIALS[1].href}
                     title="GitHub"
                     target="_blank"
                     rel="noopener noreferrer"
