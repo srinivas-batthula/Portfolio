@@ -33,8 +33,8 @@ Hello all! Welcome to my Portfolio project,, designed to showcase my skills, pro
 
 **Follow these files for Local Setup ->**
 
-- [setup_instructions.txt](https://github.comsrinivas-batthula/Portfolio/blob/main/setup_instructionstxt)
-- [test_instructions.txt](https://github.comsrinivas-batthula/Portfolio/blob/main/test_instructionstxt)
+- [setup_instructions.txt](https://github.com/srinivas-batthula/Portfolio/blob/main/setup_instructions.txt)
+- [test_instructions.txt](https://github.com/srinivas-batthula/Portfolio/blob/main/test_instructions.txt)
 
 ## Feature Workflows
 
