@@ -1,37 +1,39 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { NAV_ITEMS, RESUME_LINK } from '@/data';
 
 const NavbarResponsive: React.FC = () => {
     const [showOffcanvas, setShowOffcanvas] = useState<boolean>(false);
-    const router = useRouter();
+    // const router = useRouter();
 
-    const toggleOffcanvas = (cur: boolean) => {
-        const menuIcon = document.getElementById('menuIcon');
-        const navLinks = document.getElementById('navLinks');
-        navLinks?.classList.toggle('active');
-        menuIcon?.classList.toggle('active');
+    // const toggleOffcanvas = (cur: boolean) => {
+    //     const menuIcon = document.getElementById('menuIcon');
+    //     const navLinks = document.getElementById('navLinks');
+    //     navLinks?.classList.toggle('active');
+    //     menuIcon?.classList.toggle('active');
 
-        setShowOffcanvas(cur);
-    };
+    //     setShowOffcanvas(cur);
+    // };
 
-    const handleNavigation = (path: string) => {
-        toggleOffcanvas(false);
-        router.push(path);
-    };
+    // const handleNavigation = (path: string) => {
+    //     toggleOffcanvas(false);
+    //     router.push(path);
+    // };
 
     return (
         <div className="main">
             <nav className="navbar">
-                <div
+                <Link                                       // <div>
                     style={{ marginLeft: '1rem' }}
-                    onClick={() => router.push('/')}
+                    // onClick={() => router.push('/')}
+                    href="/"
                     className="logo"
                 >
                     Srinivas.
-                </div>
+                </Link>
 
                 <a
                     href={RESUME_LINK} // 'RESUME_LINK' from `data/home/navbar.ts`...
@@ -53,8 +55,8 @@ const NavbarResponsive: React.FC = () => {
                 </a>
 
                 <div
-                    onClick={() => toggleOffcanvas(!showOffcanvas)}
-                    className="menu-icon"
+                    onClick={() => setShowOffcanvas(!showOffcanvas)}
+                    className={`menu-icon ${showOffcanvas ? "active" : ""}`}
                     id="menuIcon"
                 >
                     <div className="bar"></div>
@@ -62,13 +64,13 @@ const NavbarResponsive: React.FC = () => {
                     <div className="bar"></div>
                 </div>
 
-                <ul className="nav-links" id="navLinks">
+                <ul className={`nav-links ${showOffcanvas ? "active" : ""}`} id="navLinks">
                     {NAV_ITEMS.map((item, idx) => (
                         <li key={idx}>
-                            <span onClick={() => handleNavigation(item.path)} className="spans">
+                            <Link href={item.path} onClick={() => setShowOffcanvas(false)} className="spans">    {/* <span>  &&  onClick={() => handleNavigation(item.path)} */}
                                 {item.icon} {/* SVG icons imported from data/home/navbar.ts */}
                                 <span>{item.label}</span>
-                            </span>
+                            </Link>
                         </li>
                     ))}
                 </ul>
