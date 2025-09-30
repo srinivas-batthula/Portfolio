@@ -26,7 +26,7 @@ const NavbarResponsive: React.FC = () => {
     return (
         <div className="main">
             <nav className="navbar">
-                <Link                                       // <div>
+                <Link // <div>
                     style={{ marginLeft: '1rem' }}
                     // onClick={() => router.push('/')}
                     href="/"
@@ -56,7 +56,7 @@ const NavbarResponsive: React.FC = () => {
 
                 <div
                     onClick={() => setShowOffcanvas(!showOffcanvas)}
-                    className={`menu-icon ${showOffcanvas ? "active" : ""}`}
+                    className={`menu-icon ${showOffcanvas ? 'active' : ''}`}
                     id="menuIcon"
                 >
                     <div className="bar"></div>
@@ -64,10 +64,16 @@ const NavbarResponsive: React.FC = () => {
                     <div className="bar"></div>
                 </div>
 
-                <ul className={`nav-links ${showOffcanvas ? "active" : ""}`} id="navLinks">
+                <ul className={`nav-links ${showOffcanvas ? 'active' : ''}`} id="navLinks">
                     {NAV_ITEMS.map((item, idx) => (
                         <li key={idx}>
-                            <Link href={item.path} onClick={() => setShowOffcanvas(false)} className="spans">    {/* <span>  &&  onClick={() => handleNavigation(item.path)} */}
+                            <Link
+                                href={item.path}
+                                onClick={() => setShowOffcanvas(false)}
+                                className="spans"
+                            >
+                                {' '}
+                                {/* <span>  &&  onClick={() => handleNavigation(item.path)} */}
                                 {item.icon} {/* SVG icons imported from data/home/navbar.ts */}
                                 <span>{item.label}</span>
                             </Link>
