@@ -23,7 +23,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         // Redirect GitHub Pages → Vercel deployment
         if (typeof window !== 'undefined') {
             const currentHost = window.location.hostname;
-            const correctHost = 'srinivas-batthula.vercel.app';
+            const correctHost = 'www.srinivas-batthula.me'; // <<  'srinivas-batthula.vercel.app'  >>
             console.log(currentHost);
 
             function extractLastSegment(path: string): string {
