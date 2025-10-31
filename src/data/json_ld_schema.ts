@@ -13,10 +13,12 @@ export const Schema: PersonSchema = {
     url: 'https://srinivas-batthula.vercel.app',
     image: 'https://srinivas-batthula.github.io/portfolio/utils/profile_pic.png',
     sameAs: [
+        'https://srinivas-batthula.me',
         'https://www.linkedin.com/in/srinivas-batthula/',
         'https://github.com/srinivas-batthula/',
         'https://leetcode.com/u/srinivas-batthula/',
         'https://www.instagram.com/srinivas_abhi8/',
+        'https://x.com/SrinivasBa76642/',
         'https://x.com/Abhi07082005/',
         'https://srinivas-batthula.github.io/portfolio',
         'mailto:srinivasbatthula05.official@gmail.com',

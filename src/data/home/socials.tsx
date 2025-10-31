@@ -60,7 +60,7 @@ export const SOCIALS: SocialLink[] = [
     },
     {
         name: 'Twitter',
-        href: 'https://x.com/Abhi07082005/',
+        href: 'https://x.com/SrinivasBa76642/',
         title: 'srinivas batthula x twitter socials',
         className: styles.twitterButton,
         icon: (
