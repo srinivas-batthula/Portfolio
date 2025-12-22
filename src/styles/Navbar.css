@@ -70,20 +70,27 @@
 }
 
 .resume-download {
-    margin-bottom: 0.25rem;
     padding: auto;
+    padding-left: 0.5rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
     text-decoration: none;
-    margin-left: auto;
-    font-size: 1.3rem;
     text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    font-size: 1rem;
     font-weight: 540;
     border: none;
     color: #fff;
     overflow: hidden;
     transition: all 0.25s ease-in-out;
+}
+.resume-download svg {
+    padding-top: 0.4rem;
 }
 
 .resume-download:hover {

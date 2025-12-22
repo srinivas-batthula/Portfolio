@@ -214,7 +214,7 @@
 
 .div1 {
     color: rgba(255, 255, 255, 0.727);
-    width: 60%;
+    width: 100%;
     vertical-align: middle;
     display: flex;
     justify-content: center;
@@ -270,9 +270,9 @@
 }
 
 @media screen and (max-width: 800px) {
-    .secMain {
+    /* .secMain {
         top: 9%;
-    }
+    } */
 
     .subDiv {
         margin-top: 9rem;
@@ -301,17 +301,17 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     .div1 {
-        width: 75%;
+        width: 80%;
     }
 }
 
 @media screen and (max-width: 650px) {
     .div1 {
-        width: 91%;
+        width: 98%;
     }
-}
+} */
 
 /* Waving animation */
 @keyframes wave {
