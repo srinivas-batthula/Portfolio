@@ -4,6 +4,8 @@ Hello all! Welcome to my Portfolio project,, designed to showcase my skills, pro
 
 ## Features
 
+- **Razorpay Integration:** For seamless Test Payments
+
 - **Pipedream Automation for contact form:** Seamlessly send 'thank you' emails with _AI_-Generated replies to the contacted users & store their data in Google-Sheets.
 
 - **Search Engine Optimized:** Added sitemap, robots.txt, JSON-LD schema and keywords to improve Google ranking and discoverability.
