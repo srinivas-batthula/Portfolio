@@ -45,10 +45,11 @@ const SkillsSection: React.FC = () => {
                                 key={category}
                                 onClick={() => setSelectedSkillCategory(category)}
                                 className={`px-3 py-1.5 rounded-full text-sm border transition-all duration-300
-            ${selectedSkillCategory === category
-                                        ? 'bg-purple-500 text-white border-purple-600 shadow'
-                                        : 'bg-transparent text-white border-gray-500 hover:border-purple-500 hover:text-purple-400'
-                                    }`}
+            ${
+                selectedSkillCategory === category
+                    ? 'bg-purple-500 text-white border-purple-600 shadow'
+                    : 'bg-transparent text-white border-gray-500 hover:border-purple-500 hover:text-purple-400'
+            }`}
                             >
                                 {category}
                             </button>
@@ -90,10 +91,11 @@ const SkillsSection: React.FC = () => {
                                 key={category}
                                 onClick={() => setSelectedToolCategory(category)}
                                 className={`px-3 py-1.5 rounded-full text-sm border transition-all duration-400
-            ${selectedToolCategory === category
-                                        ? 'bg-purple-500 text-white border-purple-600 shadow'
-                                        : 'bg-transparent text-white border-gray-500 hover:border-purple-500 hover:text-purple-400'
-                                    }`}
+            ${
+                selectedToolCategory === category
+                    ? 'bg-purple-500 text-white border-purple-600 shadow'
+                    : 'bg-transparent text-white border-gray-500 hover:border-purple-500 hover:text-purple-400'
+            }`}
                             >
                                 {category}
                             </button>

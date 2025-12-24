@@ -1,0 +1,133 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    margin-top: 5.5rem;
+    overflow: hidden;
+}
+
+.sec2 {
+    color: rgba(255, 255, 255, 0.751);
+    font-size: 2.3rem;
+    font-weight: 600;
+}
+
+.main2 {
+    color: rgba(255, 255, 255, 0.751);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 95%;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.main3 {
+    color: rgba(255, 255, 255, 0.751);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 40rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.head {
+    color: rgba(255, 255, 255, 0.751);
+    font-size: 2.3rem;
+    margin-bottom: 1.8rem;
+}
+
+.contributionCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    height: fit-content;
+}
+
+.hackathonCard {
+    cursor: pointer;
+    padding: 2.5rem;
+    background-color: rgba(34, 34, 34, 0.94);
+    box-shadow: 0 0 1rem rgba(212, 85, 212, 0.271);
+    transition-property: all;
+    transition-duration: 0.35s;
+}
+
+.hackathonCard2 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.hackathonIcon {
+    border: 0.2rem solid #e5e7eb;
+    box-shadow: 0 0 1.2rem rgb(203, 99, 203);
+    transition-property: all;
+    transition-duration: 0.35s;
+}
+
+.timelineItem:hover .hackathonIcon {
+    border: 0.3rem double #e94399fa;
+    box-shadow: 0 0 1.8rem rgb(223, 84, 223);
+}
+
+.timelineItem:hover .hackathonCard {
+    box-shadow: 0 0 0.65rem rgba(212, 85, 212, 0.544);
+}
+
+@media screen and (max-width: 800px) {
+    .sec2 {
+        font-size: 2.2rem;
+    }
+
+    .head {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .hackathonCard {
+        padding: 1rem;
+    }
+
+    .hackathonCard2 {
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+
+    .hackathonTitle {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .main3 {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .contributionCard {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .sec2 {
+        font-size: 2.1rem;
+    }
+}

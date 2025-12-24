@@ -67,7 +67,7 @@ const Home: React.FC = () => {
                     backgroundColor: 'transparent',
                 }}
             >
-                <div className={styles.div1} id='about'>
+                <div className={styles.div1} id="about">
                     <About />
                 </div>
 

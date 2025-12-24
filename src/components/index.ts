@@ -13,3 +13,4 @@ export * from './Projects';
 export * from './Socials';
 export * from './ToastFun';
 export * from './Skills';
+export * from './Highlights';

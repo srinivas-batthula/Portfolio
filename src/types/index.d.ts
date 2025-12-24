@@ -12,3 +12,4 @@ export * from './idb';
 export * from './env';
 export * from './global';
 export * from './service-worker';
+export * from './highlights';

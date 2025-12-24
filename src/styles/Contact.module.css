@@ -52,7 +52,7 @@
 }
 
 .form:hover {
-    box-shadow: 0 0 2rem rgba(234, 84, 234, 0.856);
+    box-shadow: 0 0 1.2rem rgba(238, 130, 238, 0.879);
 }
 
 @media screen and (max-width: 830px) {

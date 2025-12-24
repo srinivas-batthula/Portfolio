@@ -48,6 +48,27 @@ export const NAV_ITEMS: NavItem[] = [
         ),
     },
     {
+        label: 'Highlights',
+        path: '/achievements',
+        icon: (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="svg"
+                style={{ width: '1.35rem' }}
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 4h12v2.25a6 6 0 0 1-12 0V4ZM6 4H4.5A1.5 1.5 0 0 0 6 5.5M18 4h1.5A1.5 1.5 0 0 1 18 5.5M12 12.5V16m-3 4h6m-5-2h4"
+                />
+            </svg>
+        ),
+    },
+    {
         label: 'Projects',
         path: '/projects',
         icon: (
