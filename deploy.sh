@@ -10,4 +10,6 @@ npm run lint:fix
 
 npm run type-check
 
-echo "✅ All Checks are Successful!\n   You can proceed to deployment..."
+npm run build
+
+echo "✅ All Checks & builds are Successful!\n    You can proceed to deployment..."

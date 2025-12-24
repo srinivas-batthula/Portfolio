@@ -12,6 +12,10 @@ namespace NodeJS {
         NEXT_PUBLIC_MOBILE_NO: string;
         NEXT_PUBLIC_HOME: string;
 
+        NEXT_PUBLIC_Razorpay_Key: string;
+        RAZORPAY_KEY_ID: string;
+        RAZORPAY_KEY_SECRET: string;
+
         VERCEL_TOKEN: string;
         VERCEL_PROJECT_ID: string;
         VERCEL_ORG_ID: string;
