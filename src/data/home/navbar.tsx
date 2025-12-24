@@ -28,7 +28,7 @@ export const NAV_ITEMS: NavItem[] = [
     },
     {
         label: 'About',
-        path: '/about',
+        path: '/#about',
         icon: (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +43,27 @@ export const NAV_ITEMS: NavItem[] = [
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                />
+            </svg>
+        ),
+    },
+    {
+        label: 'Highlights',
+        path: '/achievements',
+        icon: (
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="svg"
+                style={{ width: '1.35rem' }}
+            >
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6 4h12v2.25a6 6 0 0 1-12 0V4ZM6 4H4.5A1.5 1.5 0 0 0 6 5.5M18 4h1.5A1.5 1.5 0 0 1 18 5.5M12 12.5V16m-3 4h6m-5-2h4"
                 />
             </svg>
         ),

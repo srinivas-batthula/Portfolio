@@ -70,20 +70,27 @@
 }
 
 .resume-download {
-    margin-bottom: 0.25rem;
     padding: auto;
+    padding-left: 0.5rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
     text-decoration: none;
-    margin-left: auto;
-    font-size: 1.3rem;
     text-align: center;
+    vertical-align: middle;
+    margin-left: auto;
+    font-size: 1rem;
     font-weight: 540;
     border: none;
     color: #fff;
     overflow: hidden;
     transition: all 0.25s ease-in-out;
+}
+.resume-download svg {
+    padding-top: 0.4rem;
 }
 
 .resume-download:hover {
@@ -168,7 +175,7 @@
     justify-content: end;
     list-style: none;
     text-align: center;
-    padding-top: 0.3rem;
+    padding-top: 0.1rem;
 }
 
 .nav-links li {
@@ -176,11 +183,11 @@
 }
 
 .spans {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 540;
     color: white;
     padding: 0.2rem;
-    margin-left: 3.5rem;
+    margin-left: 2.5rem;
     margin-right: 0rem;
     text-decoration: none;
     position: relative;
@@ -223,7 +230,7 @@
 }
 
 .svg {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-right: 0.2rem;
     transition-property: all;
     transition-duration: 0.2s;
@@ -236,7 +243,8 @@
     }
 
     .resume-download {
-        margin-right: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: -0.15rem;
     }
 

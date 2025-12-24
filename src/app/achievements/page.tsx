@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Keywords, Authors } from '@/data';
-import Contact from '@/components/Contact';
+import Highlights from '@/components/Highlights';
 
 // Page-specific SEO metadata
 export const metadata: Metadata = {
-    title: 'Contact | Srinivas Batthula',
-    description: 'Portfolio of Srinivas Batthula, Contact/Reach out srinivas batthula.',
+    title: 'Achievements | Srinivas Batthula',
+    description:
+        'Portfolio of Srinivas Batthula, Recent Achievements / Recognitions of srinivas batthula.',
     authors: Authors,
     keywords: Keywords,
     robots: { index: true, follow: true },
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <main>
-            <Contact />
+            <Highlights />
         </main>
     );
 }

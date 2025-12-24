@@ -17,9 +17,25 @@ export default function NotFound() {
                 flexDirection: 'column',
             }}
         >
-            <h1>404 - Page Not Found</h1>
-            <p>Oops! The page you&apos;re looking for doesn&apos;t exist.</p>
-            <Link href="/">Go back home</Link>
+            <h1 style={{ color: 'red', fontSize: '1.3rem', fontWeight: '550' }}>
+                404 - Page Not Found
+            </h1>
+            <p style={{ color: 'rgb(245, 154, 154)', fontSize: '1.2rem' }}>
+                Oops! The page you&apos;re looking for doesn&apos;t exist.
+            </p>
+            <Link
+                href="/"
+                style={{
+                    border: '2px Solid skyblue',
+                    borderRadius: '10px',
+                    backgroundColor: 'rgb(52, 199, 89)',
+                    padding: '0.3rem',
+                    marginTop: '1rem',
+                    fontWeight: '550',
+                }}
+            >
+                Go-back Home
+            </Link>
         </div>
     );
 }

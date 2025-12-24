@@ -1,4 +1,5 @@
 // components/SkillsSection.tsx
+'use client';
 import React, { useState } from 'react';
 import styles from '@/styles/About.module.css';
 
@@ -27,7 +28,7 @@ const SkillsSection: React.FC = () => {
         <div className={styles.skills}>
             {/* Skills Section */}
             <div className={styles.main2}>
-                <div className={styles.head} style={{ marginBottom: '3rem' }}>
+                <div className={styles.head} style={{ marginBottom: '2rem' }}>
                     Professional{' '}
                     <span style={{ color: 'rgb(231, 110, 231)', fontWeight: 'bold' }}>
                         Skillset
@@ -38,7 +39,7 @@ const SkillsSection: React.FC = () => {
                 </div>
 
                 {/* Skills Filter */}
-                <div className="w-96 lg:w-full overflow-x-auto scrollbarHide px-4 mb-6 scroll-snap-x">
+                <div className="w-96 lg:w-full overflow-x-auto scrollbarHide px-4 mb-4 scroll-snap-x">
                     <div className="inline-flex gap-1.5 whitespace-nowrap scroll-snap-start">
                         {SKILL_CATEGORIES.map(category => (
                             <button
@@ -67,6 +68,7 @@ const SkillsSection: React.FC = () => {
                                     item.icon // All Icons are added from `https://icon-sets.iconify.design/`...
                                 }
                             </span>
+                            <span className={styles.label}>{item.name}</span>
                         </div>
                     ))}
                 </div>
@@ -83,7 +85,7 @@ const SkillsSection: React.FC = () => {
                 </div>
 
                 {/* Tool Filter */}
-                <div className="w-96 lg:w-full overflow-x-auto scrollbarHide px-4 mb-6 scroll-snap-x">
+                <div className="w-96 lg:w-full overflow-x-auto scrollbarHide px-4 mb-4 scroll-snap-x">
                     <div className="inline-flex gap-1.5 whitespace-nowrap scroll-snap-start">
                         {TOOL_CATEGORIES.map(category => (
                             <button
@@ -103,7 +105,7 @@ const SkillsSection: React.FC = () => {
                 </div>
 
                 {/* Tools display */}
-                <div className={styles.flex3}>
+                <div className={styles.flex1}>
                     {filteredTools.map((item, index) => (
                         <div key={index} title={item.name} className={styles.flex2}>
                             <span className={styles.i}>
@@ -112,6 +114,7 @@ const SkillsSection: React.FC = () => {
                                     item.icon // All Icons are added from `https://icon-sets.iconify.design/`...
                                 }
                             </span>
+                            <span className={styles.label}>{item.name}</span>
                         </div>
                     ))}
                 </div>

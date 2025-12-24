@@ -1,6 +1,6 @@
 Follow these Instructions for Successful 'CI/CD'-checks, every-time before committing/pushing your changes to 'GitHub' -->>
 
--->> Run `./deploy.sh` script (in Ubuntu-WSL)  OR  You can below cmds also,
+-->> Run `./deploy.sh` script (Before Run `chmod +x deploy.sh` in Ubuntu-WSL terminal)  OR  You can run below cmds also,
 
 1. npm run format:check
 2. npm run format:fix

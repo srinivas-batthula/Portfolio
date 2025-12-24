@@ -36,7 +36,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     /* 4 equal columns by default */
-
     margin-bottom: 4rem;
     margin-top: 2rem;
     padding: 0.2rem;
@@ -66,6 +65,25 @@
     z-index: 0;
 }
 
+.buyBtn {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4.5rem;
+    border: 1px dashed rgba(211, 211, 80, 0.834);
+    border-radius: 10px;
+    box-shadow: 0 0 0.8rem rgba(209, 209, 41, 0.762);
+    padding: 0.3rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+.buyBtn:hover {
+    border-style: solid;
+    background-color: rgba(243, 243, 85, 0.89);
+    color: black;
+}
+
 /* Responsive breakpoints using media queries */
 @media (max-width: 1100px) {
     .grid_container {
@@ -84,6 +102,18 @@
         grid-template-columns: 1fr;
         /* 1 columns for small screens */
         margin-top: 16.2rem;
+    }
+
+    .buyBtn {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2.5rem;
     }
 
     .subDiv {
@@ -118,7 +148,7 @@
     }
 
     #g1 {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -179,6 +209,7 @@
     .sec {
         font-size: 2rem;
     }
+
     .secMain {
         margin-left: 0.5rem;
     }
@@ -188,6 +219,7 @@
     .sec {
         font-size: 1.7rem;
     }
+
     .secMain {
         margin-left: 0.2rem;
     }
@@ -214,7 +246,7 @@
 
 .div1 {
     color: rgba(255, 255, 255, 0.727);
-    width: 60%;
+    width: 100%;
     vertical-align: middle;
     display: flex;
     justify-content: center;
@@ -270,9 +302,9 @@
 }
 
 @media screen and (max-width: 800px) {
-    .secMain {
+    /* .secMain {
         top: 9%;
-    }
+    } */
 
     .subDiv {
         margin-top: 9rem;
@@ -301,17 +333,17 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
     .div1 {
-        width: 75%;
+        width: 80%;
     }
 }
 
 @media screen and (max-width: 650px) {
     .div1 {
-        width: 91%;
+        width: 98%;
     }
-}
+} */
 
 /* Waving animation */
 @keyframes wave {
@@ -386,7 +418,7 @@
 
 .footer {
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 0.6rem;
     padding: 0.4rem;
     background-color: transparent;
     backdrop-filter: blur(3rem);
