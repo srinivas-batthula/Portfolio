@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { BookMarked, Building } from 'lucide-react';
 import { IoIosGitBranch } from 'react-icons/io';

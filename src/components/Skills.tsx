@@ -1,4 +1,5 @@
 // components/SkillsSection.tsx
+'use client';
 import React, { useState } from 'react';
 import styles from '@/styles/About.module.css';
 

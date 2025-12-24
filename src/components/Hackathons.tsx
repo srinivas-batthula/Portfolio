@@ -1,4 +1,5 @@
 // components/Hackathons.jsx
+'use client';
 import styles from '@/styles/Highlights.module.css';
 import { Hackathons } from '@/data';
 import { hackathonsInterface } from '@/types';

@@ -1,4 +1,5 @@
 // components/Socials.tsx
+'use client';
 import styles from '@/styles/Home.module.css';
 import React from 'react';
 import { useRouter } from 'next/navigation';
