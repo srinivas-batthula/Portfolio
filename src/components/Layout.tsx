@@ -46,7 +46,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         // Register service worker in production
         if ('serviceWorker' in navigator && window.location.hostname !== 'localhost') {
             navigator.serviceWorker
-                .register(`${process.env.NEXT_PUBLIC_HOME}/service-worker.js`, { scope: '/' })
+                .register(`${window.location.origin}/service-worker.js`, { scope: '/' })
                 .then(registration => {
                     console.log('Service Worker registered with scope: ', registration.scope);
                 })

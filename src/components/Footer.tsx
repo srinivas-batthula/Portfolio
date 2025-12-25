@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
         try {
             // 1. Create Order
             const { data } = await axios.post(
-                `${process.env.NEXT_PUBLIC_HOME}/api/razorpay/order`,
+                `${window.location.origin}/api/razorpay/order`,
                 {
                     amount: 150, // Amount in INR
                 }
@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
                 // 3. Verify the Payment with HMAC-signature
                 handler: async function (response: any) {
                     const verifyRes = await axios.post(
-                        `${process.env.NEXT_PUBLIC_HOME}/api/razorpay/verify`,
+                        `${window.location.origin}/api/razorpay/verify`,
                         response
                     );
                     if (verifyRes.data.success) {
