@@ -9,7 +9,7 @@ import ParticlesBackground from './Background';
 import styles from '@/styles/Home.module.css';
 import FunToast from './ToastFun';
 
-import { useUserDetailsStore } from '@/stores';
+// import { useUserDetailsStore } from '@/stores';
 import { trySendOfflineShares } from '@/utils';
 
 interface LayoutProps {
@@ -17,7 +17,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-    const fetchDetails = useUserDetailsStore(s => s.fetchDetails);
+    // const fetchDetails = useUserDetailsStore(s => s.fetchDetails);
 
     useEffect(() => {
         // Redirect GitHub Pages → Vercel deployment
@@ -40,7 +40,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
                 const redirectTo = `https://${correctHost}${currentPath}`;
                 console.log(redirectTo);
-                // window.location.replace(redirectTo);
+                window.location.replace(redirectTo);
             }
         }
         // Register service worker in production
@@ -54,11 +54,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     console.error('Service Worker Registration failed: ', error);
                 });
         }
-        fetchDetails();
+        // fetchDetails();
         trySendOfflineShares();
         window.addEventListener('online', trySendOfflineShares);
         return () => window.removeEventListener('online', trySendOfflineShares);
-    }, [fetchDetails]);
+    }, []);
 
     return (
         <div className={styles.layoutDiv}>
