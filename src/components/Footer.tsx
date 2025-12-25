@@ -34,12 +34,9 @@ const Footer: React.FC = () => {
         setLoading(true);
         try {
             // 1. Create Order
-            const { data } = await axios.post(
-                `${window.location.origin}/api/razorpay/order`,
-                {
-                    amount: 150, // Amount in INR
-                }
-            );
+            const { data } = await axios.post(`${window.location.origin}/api/razorpay/order`, {
+                amount: 150, // Amount in INR
+            });
 
             // 2. Open Razorpay Checkout-UI
             const options = {
