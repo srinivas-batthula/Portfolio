@@ -2,7 +2,7 @@
 import { NavItem } from '@/types';
 
 export const RESUME_LINK: string =
-    'https://drive.google.com/uc?export=download&id=1QZhlkZRVyVi1B10Q1RtEsUxgCMZQmST-';
+    'https://drive.google.com/file/d/1FZuzoXsad9e4dJ_3UN1VIYHzIScHWQ7E/view?usp=drivesdk';
 
 export const NAV_ITEMS: NavItem[] = [
     {
